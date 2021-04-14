@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'screens/home_screen.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,32 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: MyDemo(),
+      home: HomeScreen(),
     );
-  }
-}
-
-class MyDemo extends StatelessWidget {
-  final List<Tab> myTabs = <Tab>[
-    Tab(text: 'こども'),
-    Tab(text: '小さい'),
-    Tab(text: '普通'),
-    Tab(text: '大きい'),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: myTabs.length,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: myTabs,
-            ),
-          ),
-          body: TabBarView(children: []),
-        ));
   }
 }
