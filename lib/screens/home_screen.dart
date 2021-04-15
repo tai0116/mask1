@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
 
+import 'first_tab.dart';
+import 'second_tab.dart';
+import 'third_tab.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Icon(Icons.car_rental),
-          Icon(Icons.car_rental),
-          Icon(Icons.car_rental),
-        ],
-      ),
-    );
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+              bottom: TabBar(
+            tabs: [
+              Tab(text: 'こども'),
+              Tab(text: '小さい'),
+              Tab(text: 'ふつう'),
+            ],
+          )),
+          body: TabBarView(children: [
+            first(),
+            second(),
+            third(),
+          ]),
+        ));
   }
 }
