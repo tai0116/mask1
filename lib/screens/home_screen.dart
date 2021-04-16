@@ -14,14 +14,13 @@ class _HomeState extends State<Home> {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
-          appBar: AppBar(
-              bottom: TabBar(
+          appBar: TabBar(
             tabs: [
               Tab(text: 'こども'),
               Tab(text: '小さい'),
               Tab(text: 'ふつう'),
             ],
-          )),
+          ),
           body: TabBarView(children: [
             first(),
             second(),
