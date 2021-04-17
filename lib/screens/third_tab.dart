@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class third extends StatefulWidget {
@@ -7,6 +6,13 @@ class third extends StatefulWidget {
 }
 
 class _thirdState extends State<third> {
+  List<String> _texts = [
+    "105mm × 125mm",
+    "105mm × 125mm",
+    "105mm × 125mm",
+    "105mm × 125mm",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +24,7 @@ class _thirdState extends State<third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[0])),
               ],
             ),
           ),
@@ -27,7 +33,7 @@ class _thirdState extends State<third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[1])),
               ],
             ),
           ),
@@ -36,7 +42,7 @@ class _thirdState extends State<third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[2])),
               ],
             ),
           ),
@@ -45,7 +51,7 @@ class _thirdState extends State<third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[3])),
               ],
             ),
           ),
@@ -54,10 +60,11 @@ class _thirdState extends State<third> {
     );
   }
 
-  Widget _selectButton() {
+  Widget _selectButton(String buttonText) {
     return Container(
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
+        child: Text(buttonText),
         onPressed: () {},
       ),
     );

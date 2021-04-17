@@ -6,6 +6,18 @@ class first extends StatefulWidget {
 }
 
 class _firstState extends State<first> {
+  // String _text01 = "105mm × 125mm";
+  // String _text02 = "105mm × 125mm";
+  // String _text03 = "105mm × 125mm";
+  // String _text04 = "105mm × 125mm";
+
+  List<String> _texts = [
+    "105mm × 125mm",
+    "105mm × 125mm",
+    "105mm × 125mm",
+    "105mm × 125mm",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +29,7 @@ class _firstState extends State<first> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[0])),
               ],
             ),
           ),
@@ -26,7 +38,7 @@ class _firstState extends State<first> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[1])),
               ],
             ),
           ),
@@ -35,7 +47,7 @@ class _firstState extends State<first> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[2])),
               ],
             ),
           ),
@@ -44,7 +56,7 @@ class _firstState extends State<first> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[3])),
               ],
             ),
           ),
@@ -53,10 +65,11 @@ class _firstState extends State<first> {
     );
   }
 
-  Widget _selectButton() {
+  Widget _selectButton(String buttonText) {
     return Container(
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
+        child: Text(buttonText),
         onPressed: () {},
       ),
     );

@@ -6,6 +6,13 @@ class second extends StatefulWidget {
 }
 
 class _secondState extends State<second> {
+  List<String> _texts = [
+    "105mm × 125mm",
+    "105mm × 125mm",
+    "105mm × 125mm",
+    "105mm × 125mm",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +24,7 @@ class _secondState extends State<second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[0])),
               ],
             ),
           ),
@@ -26,7 +33,7 @@ class _secondState extends State<second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[1])),
               ],
             ),
           ),
@@ -35,7 +42,7 @@ class _secondState extends State<second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[2])),
               ],
             ),
           ),
@@ -44,7 +51,7 @@ class _secondState extends State<second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton()),
+                Expanded(flex: 1, child: _selectButton(_texts[3])),
               ],
             ),
           ),
@@ -53,10 +60,11 @@ class _secondState extends State<second> {
     );
   }
 
-  Widget _selectButton() {
+  Widget _selectButton(String buttonText) {
     return Container(
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
+        child: Text(buttonText),
         onPressed: () {},
       ),
     );
