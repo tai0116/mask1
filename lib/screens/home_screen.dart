@@ -22,9 +22,9 @@ class _HomeState extends State<Home> {
             ],
           ),
           body: TabBarView(children: [
-            first(),
-            second(),
-            third(),
+            First(),
+            Second(),
+            Third(),
           ]),
         ));
   }

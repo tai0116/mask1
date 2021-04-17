@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class second extends StatefulWidget {
+class Second extends StatefulWidget {
   @override
-  _secondState createState() => _secondState();
+  _SecondState createState() => _SecondState();
 }
 
-class _secondState extends State<second> {
+class _SecondState extends State<Second> {
   List<String> _texts = [
-    "105mm × 125mm",
-    "105mm × 125mm",
-    "105mm × 125mm",
-    "105mm × 125mm",
+    "secondPage01 105mm × 125mm",
+    "secondPage02 105mm × 125mm",
+    "secondPage03 105mm × 125mm",
+    "secondPage04 105mm × 125mm",
   ];
 
   @override

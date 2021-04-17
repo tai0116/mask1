@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class third extends StatefulWidget {
+class Third extends StatefulWidget {
   @override
-  _thirdState createState() => _thirdState();
+  _ThirdState createState() => _ThirdState();
 }
 
-class _thirdState extends State<third> {
+class _ThirdState extends State<Third> {
   List<String> _texts = [
-    "105mm × 125mm",
-    "105mm × 125mm",
-    "105mm × 125mm",
-    "105mm × 125mm",
+    "thirdPage01 120mm × 140mm",
+    "thirdPage02 120mm × 140mm",
+    "thirdPage03 120mm × 140mm",
+    "thirdPage04 120mm × 140mm",
   ];
 
   @override

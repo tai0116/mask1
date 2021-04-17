@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
-class first extends StatefulWidget {
+import 'first_page_next.dart';
+
+class First extends StatefulWidget {
   @override
-  _firstState createState() => _firstState();
+  _FirstState createState() => _FirstState();
 }
 
-class _firstState extends State<first> {
-  // String _text01 = "105mm × 125mm";
-  // String _text02 = "105mm × 125mm";
-  // String _text03 = "105mm × 125mm";
-  // String _text04 = "105mm × 125mm";
-
+class _FirstState extends State<First> {
   List<String> _texts = [
-    "105mm × 125mm",
-    "105mm × 125mm",
-    "105mm × 125mm",
-    "105mm × 125mm",
+    "firstPage01 90mm × 110mm",
+    "firstPage02 90mm × 110mm",
+    "firstPage03 90mm × 110mm",
+    "firstPage04 90mm × 110mm",
   ];
 
   @override
@@ -70,7 +67,14 @@ class _firstState extends State<first> {
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
         child: Text(buttonText),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => FirstPage(),
+            ),
+          );
+        },
       ),
     );
   }
