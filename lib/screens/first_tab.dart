@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'first_page_next.dart';
+import 'first_page_1_next.dart';
 
 class First extends StatefulWidget {
   @override
@@ -71,7 +71,7 @@ class _FirstState extends State<First> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => FirstPage(),
+              builder: (context) => FirstPage1(),
             ),
           );
         },
