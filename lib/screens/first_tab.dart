@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'first_page_next.dart';
+import 'first_page.dart';
 
 class First extends StatefulWidget {
   @override
@@ -9,10 +9,10 @@ class First extends StatefulWidget {
 
 class _FirstState extends State<First> {
   List<String> _texts = [
-    "firstPage01 90mm × 110mm",
-    "firstPage02 90mm × 110mm",
-    "firstPage03 90mm × 110mm",
-    "firstPage04 90mm × 110mm",
+    "firstPage01 90mm × 111mm",
+    "firstPage02 90mm × 112mm",
+    "firstPage03 90mm × 113mm",
+    "firstPage04 90mm × 114mm",
   ];
 
   @override
@@ -26,7 +26,9 @@ class _FirstState extends State<First> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[0])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[0], FirstPage(_texts[0]))),
               ],
             ),
           ),
@@ -35,7 +37,10 @@ class _FirstState extends State<First> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[1])),
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(_texts[1], FirstPage(_texts[1])),
+                )
               ],
             ),
           ),
@@ -44,7 +49,10 @@ class _FirstState extends State<First> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[2])),
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(_texts[2], FirstPage(_texts[2])),
+                )
               ],
             ),
           ),
@@ -53,7 +61,10 @@ class _FirstState extends State<First> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[3])),
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(_texts[3], FirstPage(_texts[3])),
+                )
               ],
             ),
           ),
@@ -62,7 +73,8 @@ class _FirstState extends State<First> {
     );
   }
 
-  Widget _selectButton(String buttonText) {
+  //Widget _selectButton(String buttonText, Widget page)と書くことによって、この_selectButtonの変更したい部分だけ、書き出すことができる。
+  Widget _selectButton(String buttonText, Widget page) {
     return Container(
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
@@ -71,7 +83,7 @@ class _FirstState extends State<First> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => FirstPage(),
+              builder: (context) => page,
             ),
           );
         },

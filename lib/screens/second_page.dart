@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
-class FirstPage extends StatefulWidget {
+class SecondPage extends StatefulWidget {
+  SecondPage(this.title);
+  final String title;
+
   @override
-  _FirstPageState createState() => _FirstPageState();
+  _SecondPageState createState() => _SecondPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('こども用マスク'),
+        title: Text(widget.title),
       ),
       body: Container(
         height: double.infinity,

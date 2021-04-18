@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mask1_app/screens/second_page.dart';
 
 class Second extends StatefulWidget {
   @override
@@ -8,9 +9,9 @@ class Second extends StatefulWidget {
 class _SecondState extends State<Second> {
   List<String> _texts = [
     "secondPage01 105mm × 125mm",
-    "secondPage02 105mm × 125mm",
-    "secondPage03 105mm × 125mm",
-    "secondPage04 105mm × 125mm",
+    "secondPage02 105mm × 126mm",
+    "secondPage03 105mm × 127mm",
+    "secondPage04 105mm × 128mm",
   ];
 
   @override
@@ -24,7 +25,9 @@ class _SecondState extends State<Second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[0])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[0], SecondPage(_texts[0]))),
               ],
             ),
           ),
@@ -33,7 +36,9 @@ class _SecondState extends State<Second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[1])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[1], SecondPage(_texts[1]))),
               ],
             ),
           ),
@@ -42,7 +47,9 @@ class _SecondState extends State<Second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[2])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[2], SecondPage(_texts[2]))),
               ],
             ),
           ),
@@ -51,7 +58,10 @@ class _SecondState extends State<Second> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[3])),
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(_texts[3], SecondPage(_texts[3])),
+                )
               ],
             ),
           ),
@@ -60,12 +70,18 @@ class _SecondState extends State<Second> {
     );
   }
 
-  Widget _selectButton(String buttonText) {
+  Widget _selectButton(String buttonText, Widget page) {
     return Container(
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
         child: Text(buttonText),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => page,
+              ));
+        },
       ),
     );
   }
