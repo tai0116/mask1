@@ -7,10 +7,10 @@ class Third extends StatefulWidget {
 
 class _ThirdState extends State<Third> {
   List<String> _texts = [
-    "thirdPage01 120mm × 140mm",
-    "thirdPage02 120mm × 140mm",
-    "thirdPage03 120mm × 140mm",
-    "thirdPage04 120mm × 140mm",
+    "120mm × 140mm",
+    "120mm × 141mm",
+    "120mm × 142mm",
+    "120mm × 143mm",
   ];
 
   @override

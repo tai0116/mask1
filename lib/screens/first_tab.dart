@@ -9,10 +9,10 @@ class First extends StatefulWidget {
 
 class _FirstState extends State<First> {
   List<String> _texts = [
-    "firstPage01 90mm × 111mm",
-    "firstPage02 90mm × 112mm",
-    "firstPage03 90mm × 113mm",
-    "firstPage04 90mm × 114mm",
+    " 90mm × 111mm",
+    " 90mm × 112mm",
+    " 90mm × 113mm",
+    " 90mm × 114mm",
   ];
 
   @override
@@ -29,6 +29,7 @@ class _FirstState extends State<First> {
                 Expanded(
                     flex: 1,
                     child: _selectButton(_texts[0], FirstPage(_texts[0]))),
+                //ここでやっていることはsellectButtonに(_texts[0], FirstPage(_texts[0])という関数を持たせているということ？
               ],
             ),
           ),

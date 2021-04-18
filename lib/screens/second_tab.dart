@@ -8,10 +8,10 @@ class Second extends StatefulWidget {
 
 class _SecondState extends State<Second> {
   List<String> _texts = [
-    "secondPage01 105mm × 125mm",
-    "secondPage02 105mm × 126mm",
-    "secondPage03 105mm × 127mm",
-    "secondPage04 105mm × 128mm",
+    " 105mm × 125mm",
+    " 105mm × 126mm",
+    " 105mm × 127mm",
+    " 105mm × 128mm",
   ];
 
   @override
