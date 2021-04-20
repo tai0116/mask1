@@ -13,6 +13,8 @@ class _ThirdState extends State<Third> {
     "120mm × 143mm",
   ];
 
+  //=は「その中に入れるよ」的な働きをしてくれている（代入してくれている）
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -15,6 +15,9 @@ class _FirstState extends State<First> {
     " 90mm × 114mm",
   ];
 
+  //　＝　は「その中に入れるよ」的な働きをしてくれている（代入してくれている）　＝は←みたいなイメージ
+  //お絵描きメソッドであるbuildメソッドの中で変数（変わる値）を使う時には、＝　が必要になってくるよね
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +32,7 @@ class _FirstState extends State<First> {
                 Expanded(
                     flex: 1,
                     child: _selectButton(_texts[0], FirstPage(_texts[0]))),
-                //ここでやっていることはsellectButtonに(_texts[0], FirstPage(_texts[0])という関数を持たせているということ？
+                //ここでやっていることはsellectButtonに(_texts[0], FirstPage(_texts[0])という引数（パラメータ）を持たせているということ？
               ],
             ),
           ),
@@ -76,7 +79,9 @@ class _FirstState extends State<First> {
 
   //Widget _selectButton(String buttonText, Widget page)と書くことによって、この_selectButtonの変更したい部分だけ、書き出すことができる。
   Widget _selectButton(String buttonText, Widget page) {
+    //widget（raisedbuttonでも可）は戻り値の型　_selectButtonはメソッドの名前　Stringは引数（パラメータ）の型　buttonTextは名前
     return Container(
+      //戻り値（今回で言えば、widgetがあるということは、returnが必要となる。）
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
         child: Text(buttonText),

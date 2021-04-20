@@ -15,6 +15,7 @@ class _HomeState extends State<Home> {
         length: 3,
         child: Scaffold(
           appBar: TabBar(
+            labelColor: Colors.black,
             tabs: [
               Tab(text: 'こども'),
               Tab(text: '小さい'),
