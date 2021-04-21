@@ -12,12 +12,12 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   int selectedIndex = 0;
-  List widgetOptions = [
-    NavBottom(),
-    NavBottom(),
-    NavBottom(),
-    NavBottom(),
-    NavBottom(),
+  List<Widget> widgetOptions = [
+    NavBottom('1'),
+    NavBottom('2'),
+    NavBottom('3'),
+    NavBottom('4'),
+    NavBottom('5'),
   ];
 
   void onItemTap(int index) {
@@ -33,7 +33,7 @@ class _SecondPageState extends State<SecondPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: widgetOptions.elementAt(selectedIndex),
+        child: widgetOptions[selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -46,8 +46,16 @@ class _SecondPageState extends State<SecondPage> {
             title: Text('少し大きい'),
           ),
         ],
-        currentIndex: selectedIndex,
-        onTap: onItemTap,
+        currentIndex: 0,
+        onTap: (index) {
+          setState(() {
+            if (index == 0) {
+              selectedIndex--;
+            } else {
+              selectedIndex++;
+            }
+          });
+        },
       ),
     );
   }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NavBottom extends StatefulWidget {
+  NavBottom(this.title);
+  final String title;
+
   @override
   _NavBottomState createState() => _NavBottomState();
 }
@@ -8,6 +11,6 @@ class NavBottom extends StatefulWidget {
 class _NavBottomState extends State<NavBottom> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(child: Text(widget.title));
   }
 }
