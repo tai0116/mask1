@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'bottom_navigation_screen.dart';
 
-//このFirstPageに共通する部分は共通させて、変更したい部分は切り出す。そうすれば、共通して変更したい部分が出てきた時に一気に変更することができる。
-
-class FirstPage extends StatefulWidget {
-  FirstPage(this.title);
+class ThirdPage extends StatefulWidget {
+  ThirdPage(this.title);
   final String title;
 
   @override
-  _FirstPageState createState() => _FirstPageState();
+  _ThirdPageState createState() => _ThirdPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _ThirdPageState extends State<ThirdPage> {
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
     NavBottom('1'),

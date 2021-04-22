@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'third_page.dart';
+
 class Third extends StatefulWidget {
   @override
   _ThirdState createState() => _ThirdState();
@@ -26,7 +28,9 @@ class _ThirdState extends State<Third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[0])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[0], ThirdPage(_texts[0]))),
               ],
             ),
           ),
@@ -35,7 +39,9 @@ class _ThirdState extends State<Third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[1])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[1], ThirdPage(_texts[1]))),
               ],
             ),
           ),
@@ -44,7 +50,9 @@ class _ThirdState extends State<Third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[2])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[2], ThirdPage(_texts[2]))),
               ],
             ),
           ),
@@ -53,7 +61,9 @@ class _ThirdState extends State<Third> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(flex: 1, child: _selectButton(_texts[3])),
+                Expanded(
+                    flex: 1,
+                    child: _selectButton(_texts[3], ThirdPage(_texts[3]))),
               ],
             ),
           ),
@@ -62,12 +72,19 @@ class _ThirdState extends State<Third> {
     );
   }
 
-  Widget _selectButton(String buttonText) {
+  Widget _selectButton(String buttonText, Widget page) {
     return Container(
       padding: EdgeInsets.all(16.0),
       child: RaisedButton(
         child: Text(buttonText),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => page,
+            ),
+          );
+        },
       ),
     );
   }
