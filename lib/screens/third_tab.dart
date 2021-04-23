@@ -75,8 +75,15 @@ class _ThirdState extends State<Third> {
   Widget _selectButton(String buttonText, Widget page) {
     return Container(
       padding: EdgeInsets.all(16.0),
-      child: RaisedButton(
-        child: Text(buttonText),
+      child: ElevatedButton(
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.white30),
+        ),
+        child: Text(
+          buttonText,
+          style: TextStyle(fontSize: 15.0),
+        ),
         onPressed: () {
           Navigator.push(
             context,
