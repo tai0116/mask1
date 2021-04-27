@@ -5,28 +5,29 @@ import 'bottom_navigation_screen.dart';
 //このFirstPageに共通する部分は共通させて、変更したい部分は切り出す。そうすれば、共通して変更したい部分が出てきた時に一気に変更することができる。
 
 class FirstPage extends StatefulWidget {
-  FirstPage(this.title);
+  FirstPage(this.title, this.screenIndex);
   final String title;
+  int screenIndex;
 
   @override
   _FirstPageState createState() => _FirstPageState();
 }
 
 class _FirstPageState extends State<FirstPage> {
+  //List<String> _texts = [
+  //" 90mm × 111mm",
+  //" 90mm × 112mm",
+  //" 90mm × 113mm",
+  //" 90mm × 114mm",
+  //];
+
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
     NavBottom('1'),
     NavBottom('2'),
     NavBottom('3'),
     NavBottom('4'),
-    NavBottom('5'),
   ];
-
-  void onItemTap(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,29 +36,55 @@ class _FirstPageState extends State<FirstPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: widgetOptions[selectedIndex],
+        child: widgetOptions[widget.screenIndex],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.arrow_back),
-            title: Text('少し小さい'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.arrow_forward),
-            title: Text('少し大きい'),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Stack(
+            children: [
+              Placeholder(),
+              Positioned(
+                left: 30,
+                bottom: 10,
+                child: FloatingActionButton.extended(
+                  backgroundColor: const Color(0xff03dac6),
+                  foregroundColor: Colors.black,
+                  onPressed: () {
+                    setState(() {
+                      if (widget.screenIndex == 0) {
+                        null;
+                      } else {
+                        widget.screenIndex--;
+                      }
+                    });
+                  },
+                  icon: Icon(Icons.arrow_back),
+                  label: Text('少し小さい'),
+                ),
+              ),
+              Positioned(
+                right: 30,
+                bottom: 10,
+                child: FloatingActionButton.extended(
+                  backgroundColor: const Color(0xff03dac6),
+                  foregroundColor: Colors.black,
+                  onPressed: () {
+                    setState(() {
+                      if (widget.screenIndex == 3) {
+                        null;
+                      } else {
+                        widget.screenIndex++;
+                      }
+                    });
+                  },
+                  icon: Icon(Icons.arrow_forward),
+                  label: Text('少し大きい'),
+                ),
+              )
+            ],
           ),
         ],
-        currentIndex: 0,
-        onTap: (index) {
-          setState(() {
-            if (index == 0) {
-              selectedIndex--;
-            } else {
-              selectedIndex++;
-            }
-          });
-        },
       ),
     );
   }

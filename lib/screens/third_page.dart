@@ -39,11 +39,11 @@ class _ThirdPageState extends State<ThirdPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.arrow_back),
-            title: Text('少し小さい'),
+            label: '少し小さい',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.arrow_forward),
-            title: Text('少し大きい'),
+            label: '少し大きい',
           ),
         ],
         currentIndex: 0,

@@ -33,11 +33,11 @@ class _NavState extends State<Nav> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home'),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text('search'),
+            label: 'search',
           ),
         ],
         currentIndex: selectedIndex,

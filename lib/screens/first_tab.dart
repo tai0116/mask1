@@ -15,6 +15,12 @@ class _FirstState extends State<First> {
     " 90mm × 114mm",
   ];
 
+  List<int> _pageNumbers = [
+    0,
+    1,
+    2,
+    3,
+  ];
   //　＝　は「その中に入れるよ」的な働きをしてくれている（代入してくれている）　＝は←みたいなイメージ
   //お絵描きメソッドであるbuildメソッドの中で変数（変わる値）を使う時には、＝　が必要になってくるよね
 
@@ -31,7 +37,8 @@ class _FirstState extends State<First> {
               children: [
                 Expanded(
                     flex: 1,
-                    child: _selectButton(_texts[0], FirstPage(_texts[0]))),
+                    child: _selectButton(
+                        _texts[0], FirstPage(_texts[0], _pageNumbers[0]))),
                 //ここでやっていることはsellectButtonに(_texts[0], FirstPage(_texts[0])という引数（パラメータ）を持たせているということ？
               ],
             ),
@@ -43,7 +50,8 @@ class _FirstState extends State<First> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: _selectButton(_texts[1], FirstPage(_texts[1])),
+                  child: _selectButton(
+                      _texts[1], FirstPage(_texts[1], _pageNumbers[1])),
                 )
               ],
             ),
@@ -55,7 +63,8 @@ class _FirstState extends State<First> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: _selectButton(_texts[2], FirstPage(_texts[2])),
+                  child: _selectButton(
+                      _texts[2], FirstPage(_texts[2], _pageNumbers[2])),
                 )
               ],
             ),
@@ -67,7 +76,8 @@ class _FirstState extends State<First> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: _selectButton(_texts[3], FirstPage(_texts[3])),
+                  child: _selectButton(
+                      _texts[3], FirstPage(_texts[3], _pageNumbers[3])),
                 )
               ],
             ),
