@@ -6,7 +6,7 @@ import 'bottom_navigation_screen.dart';
 
 class FirstPage extends StatefulWidget {
   FirstPage(this.title, this.screenIndex);
-  final String title;
+  String title;
   int screenIndex;
 
   @override
@@ -14,13 +14,6 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  //List<String> _texts = [
-  //" 90mm × 111mm",
-  //" 90mm × 112mm",
-  //" 90mm × 113mm",
-  //" 90mm × 114mm",
-  //];
-
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
     NavBottom('1'),
@@ -57,6 +50,15 @@ class _FirstPageState extends State<FirstPage> {
                       } else {
                         widget.screenIndex--;
                       }
+                      if (widget.screenIndex == 0) {
+                        widget.title = '90mm × 111mm';
+                      } else if (widget.screenIndex == 1) {
+                        widget.title = '90mm × 112mm';
+                      } else if (widget.screenIndex == 2) {
+                        widget.title = '90mm × 113mm';
+                      } else if (widget.screenIndex == 3) {
+                        widget.title = '90mm × 114mm';
+                      }
                     });
                   },
                   icon: Icon(Icons.arrow_back),
@@ -75,6 +77,15 @@ class _FirstPageState extends State<FirstPage> {
                         null;
                       } else {
                         widget.screenIndex++;
+                      }
+                      if (widget.screenIndex == 0) {
+                        widget.title = '90mm × 111mm';
+                      } else if (widget.screenIndex == 1) {
+                        widget.title = '90mm × 112mm';
+                      } else if (widget.screenIndex == 2) {
+                        widget.title = '90mm × 113mm';
+                      } else if (widget.screenIndex == 3) {
+                        widget.title = '90mm × 114mm';
                       }
                     });
                   },
