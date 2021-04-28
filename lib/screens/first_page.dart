@@ -68,7 +68,7 @@ class _FirstPageState extends State<FirstPage> {
               Positioned(
                 right: 30,
                 bottom: 10,
-                child: FloatingActionButton.extended(
+                child: FloatingActionButton(
                   backgroundColor: const Color(0xff03dac6),
                   foregroundColor: Colors.black,
                   onPressed: () {
@@ -89,8 +89,8 @@ class _FirstPageState extends State<FirstPage> {
                       }
                     });
                   },
-                  icon: Icon(Icons.arrow_forward),
-                  label: Text('少し大きい'),
+                  child: Icon(Icons.arrow_forward),
+                  tooltip: '少し大きい',
                 ),
               )
             ],
