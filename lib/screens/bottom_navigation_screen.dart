@@ -14,10 +14,6 @@ class _NavBottomState extends State<NavBottom> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: Image.network(
-                'https://images-na.ssl-images-amazon.com/images/I/41KuS9SpA2L._AC_SL1000_.jpg'),
-          ),
           Divider(
             color: Colors.black,
             indent: 8.0,

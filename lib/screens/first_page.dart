@@ -35,7 +35,7 @@ class _FirstPageState extends State<FirstPage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Stack(
-            children: [
+            children: <Widget>[
               Placeholder(),
               Positioned(
                 left: 30,
