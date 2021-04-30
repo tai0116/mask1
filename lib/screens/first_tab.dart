@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'first_page.dart';
 
+import 'first_page_1_next.dart';
+
 class First extends StatefulWidget {
   @override
   _FirstState createState() => _FirstState();
