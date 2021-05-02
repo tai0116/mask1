@@ -41,8 +41,8 @@ class _FirstPageState extends State<FirstPage> {
                 left: 30,
                 bottom: 10,
                 child: FloatingActionButton.extended(
-                  backgroundColor: const Color(0xff03dac6),
-                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.blueGrey,
+                  foregroundColor: Colors.white,
                   onPressed: () {
                     setState(() {
                       if (widget.screenIndex == 0) {
@@ -68,9 +68,9 @@ class _FirstPageState extends State<FirstPage> {
               Positioned(
                 right: 30,
                 bottom: 10,
-                child: FloatingActionButton(
-                  backgroundColor: const Color(0xff03dac6),
-                  foregroundColor: Colors.black,
+                child: FloatingActionButton.extended(
+                  backgroundColor: Colors.blueGrey,
+                  foregroundColor: Colors.white,
                   onPressed: () {
                     setState(() {
                       if (widget.screenIndex == 3) {
@@ -89,8 +89,8 @@ class _FirstPageState extends State<FirstPage> {
                       }
                     });
                   },
-                  child: Icon(Icons.arrow_forward),
-                  tooltip: '少し大きい',
+                  icon: Icon(Icons.arrow_forward),
+                  label: Text('少し大きい'),
                 ),
               )
             ],
