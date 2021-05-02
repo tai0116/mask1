@@ -4,10 +4,11 @@ class NavBottom extends StatefulWidget {
   NavBottom(this.title);
   final String title;
 
-
   //TODO マージについて学ぶ
 
   //TODO 競合させる
+
+  //TODO 追加
 
   @override
   _NavBottomState createState() => _NavBottomState();
