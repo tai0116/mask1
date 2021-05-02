@@ -4,6 +4,8 @@ class NavBottom extends StatefulWidget {
   NavBottom(this.title);
   final String title;
 
+  //TODO マージについて学ぶ
+
   @override
   _NavBottomState createState() => _NavBottomState();
 }
